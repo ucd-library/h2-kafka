@@ -1,0 +1,21 @@
+{
+  "name": "@ucd-lib/h2-kafka",
+  "version": "0.0.1",
+  "description": "http2 access to kafka topics",
+  "main": "lib/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kafka",
+    "http2"
+  ],
+  "author": "jrmerz@ucdavis.edu",
+  "license": "MIT",
+  "dependencies": {
+    "@ucd-lib/node-kafka": "^0.0.8",
+    "jsonwebtoken": "^8.5.1",
+    "uuid": "^8.3.2"
+  }
+}
