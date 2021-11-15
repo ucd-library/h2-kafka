@@ -6,7 +6,7 @@ sio = socketio.Client()
 @sio.event
 def connect():
     print('connection established')
-    sio.emit('config', {'topic': 'foo'})
+    sio.emit('config', {'topic': 'foo2'})
 
 @sio.event
 def connect_error(data):
@@ -15,8 +15,14 @@ def connect_error(data):
 @sio.event
 def message(data):
     print('message received with ', data)
+
+    if data.get('error') == True:
+      print('Badness!') # something went wrong, check message for additional information
+      return
+
     if data.get('connected') == True and data.get('id') is None:
       return
+
     sio.emit('message', {'ack': True, 'id': data['id']})
 
 @sio.event
