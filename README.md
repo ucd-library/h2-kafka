@@ -33,6 +33,14 @@ Note `--http2-prior-knowledge` is required if connecting via non-https endpoint 
 
 Below is sample code connecting to a topic using python:
 
+Requirements:
+
+```bash
+> python -m pip install python-socketio requests websocket-client
+```
+
+Code:
+
 ```python
 import socketio
 import os
