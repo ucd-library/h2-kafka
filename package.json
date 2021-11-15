@@ -16,6 +16,7 @@
   "dependencies": {
     "@ucd-lib/node-kafka": "^0.0.8",
     "jsonwebtoken": "^8.5.1",
+    "socket.io": "^4.3.2",
     "uuid": "^8.3.2"
   }
 }
