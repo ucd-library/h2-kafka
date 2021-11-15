@@ -10,8 +10,9 @@ Websocket interface uses the [Socket.IO](https://socket.io/) library
  - `KAFKA_PORT`: Broker port to connect to. Defaults to `9092`
  - `JWT_SECRET`: Secret to use for JWT authentication
  - `JWT_HEADER` : Http header containing JWT token.  Defaults to `authorization`
- - `JWT_TOPIC_PROPERTY`: Which property in the JWT token should be used for the `group.id`.
+ - `JWT_TOPIC_PROPERTY`: Which property in the JWT token should be used for the `group.id`. Defaults to `user`
  - `SERVER_TYPE`: Either `WS` or `HTTP2`. Defaults to HTTP2
+ - `SOCKET_IO_PATH`: If you need to change the host path for Socket.IO.  Defaults to `/socket-io/` (the default socket.io library path)
 
 ## Usage
 

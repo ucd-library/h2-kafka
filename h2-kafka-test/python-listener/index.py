@@ -6,7 +6,7 @@ sio = socketio.Client()
 @sio.event
 def connect():
     print('connection established')
-    sio.emit('config', {'topic': 'foo2'})
+    sio.emit('config', {'topic': 'foo'})
 
 @sio.event
 def connect_error(data):
@@ -29,5 +29,5 @@ def message(data):
 def disconnect():
     print('disconnected from server')
 
-sio.connect('http://server:3000', auth={'token': os.environ['LISTENER_KEY']})
+sio.connect('http://server:3000/', socketio_path='/_/foo/', auth={'token': os.environ['LISTENER_KEY']})
 sio.wait()
