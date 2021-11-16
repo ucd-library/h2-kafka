@@ -92,3 +92,11 @@ sio.connect(
 )
 sio.wait()
 ```
+
+## Reset Offsets to earliest/latest
+
+You can manually reset the offset to the earliest or latest for a group by running the following:
+
+`sio.emit('message', {'cmd': 'resetTopicOffsets', 'topic': 'foo', 'location': 'to-latest'})`
+
+Note, all group consumers must be disconnected for this command to work.

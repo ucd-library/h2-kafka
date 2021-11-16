@@ -6,7 +6,7 @@ sio = socketio.Client()
 @sio.event
 def connect():
     print('connection established')
-    sio.emit('config', {'topic': 'foo'})
+    sio.emit('message', {'cmd': 'resetTopicOffsets', 'topic': 'foo', 'location': 'to-latest'})
 
 @sio.event
 def connect_error(data):
@@ -21,6 +21,10 @@ def message(data):
       return
 
     if data.get('connected') == True and data.get('id') is None:
+      return
+
+    if data.get('cmd') is not None:
+      sio.emit('config', {'topic': 'foo'})
       return
 
     sio.emit('message', {'ack': True, 'id': data['id']})
